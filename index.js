@@ -3,7 +3,7 @@ const context = canvas.getContext('2d');
 const penColor=document.querySelector('input[name="penColor"]');
 const penSize=document.querySelector('input[name="penSize"]');
 const save=document.querySelector('#save');
-
+const reset=document.querySelector('#reset');
 context.strokeStyle='#000000';
 context.lineJoin='round';
 context.lineCap='round';
@@ -36,4 +36,7 @@ canvas.addEventListener('mouseup',()=>{
 });
 canvas.addEventListener('mouseout',()=>{
     pen.down=false;
+});
+reset.addEventListener('click',()=>{
+    context.clearRect(0, 0, canvas.width, canvas.height);
 });
