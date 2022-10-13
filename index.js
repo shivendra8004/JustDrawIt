@@ -21,13 +21,19 @@ canvas.addEventListener('mousedown',(e)=>{
     [pen.x,pen.y]=[e.offsetX,e.offsetY];
     console.log(pen);
 });
-canvas.addEventListener('mousemove',()=>{
-    console.log("Move");
+canvas.addEventListener('mousemove',(e)=>{
+    if(!pen.down) return;
+    context.lineWidth= penSize.value;
+    context.strokeStyle = penColor.value;
+    context.beginPath();
+    context.moveTo(pen.x,pen.y);
+    context.lineTo(e.offsetX,e.offsetY);
+    context.stroke();
+    [pen.x,pen.y]=[e.offsetX,e.offsetY];
 });
 canvas.addEventListener('mouseup',()=>{
-    console.log("MouseUp");
+    pen.down=false;
 });
 canvas.addEventListener('mouseout',()=>{
     pen.down=false;
-    console.log("Out");
 });
