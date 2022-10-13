@@ -8,10 +8,17 @@
     <meta name='description' content='' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <link rel='stylesheet' href='./styles.css' />
-    <script src='./index.js' async defer></script>
+    <script type="text/javascript" src='./index.js' async defer></script>
 </head>
 
 <body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <div class="dashBoard">
+        <input type="color" name="penColor" value="#000000">
+        <input type="range" name="penSize" min="1" max="100" step="2" value="5">
+        <button id="save">Save</button>
+    </div>
+    <img src="" id="myImg">
 </body>
 
 </html>
