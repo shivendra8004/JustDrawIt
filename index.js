@@ -14,18 +14,20 @@ let pen ={
     down:false
 };
 save.addEventListener('click',()=>{
-    // console.log("Saved");
+    console.log("Saved");
 });
-canvas.addEventListener('mousedown',()=>{
-    pen.down=false;
-    // console.log("MouseDown");
+canvas.addEventListener('mousedown',(e)=>{
+    pen.down=true;
+    [pen.x,pen.y]=[e.offsetX,e.offsetY];
+    console.log(pen);
 });
 canvas.addEventListener('mousemove',()=>{
-    // console.log("MouseMove");
+    console.log("Move");
 });
 canvas.addEventListener('mouseup',()=>{
-    // console.log("MouseUp");
+    console.log("MouseUp");
 });
 canvas.addEventListener('mouseout',()=>{
-    // console.log("MouseOut");
+    pen.down=false;
+    console.log("Out");
 });
