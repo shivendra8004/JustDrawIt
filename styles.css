@@ -12,8 +12,8 @@ body {
 }
 
 .title {
-    font-size: 500%;
-    margin-left: 5%;
+    font-size: 400%;
+    margin-left: 4%;
     color: #f1356d;
 }
 
@@ -25,7 +25,7 @@ body {
 #canvas {
     background: white;
     border: 3px solid black;
-    margin-left: 5%;
+    margin-left: 4%;
 }
 
 .dashBoard {
@@ -39,7 +39,7 @@ input {
 
 .color,
 .size {
-    font-size: 250%;
+    font-size: 160%;
     color: #f1356d;
     font-weight: bold;
 }
@@ -67,7 +67,7 @@ input {
 #reset {
     height: 50px;
     width: 140px;
-    font-size: 22px;
+    font-size: 20px;
     border-radius: 12px;
     color: #f1356d;
     font-weight: bold;
