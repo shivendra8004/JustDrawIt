@@ -15,7 +15,14 @@ let pen ={
 };
 save.addEventListener('click',()=>{
     let image = canvas.toDataURL();
-    document.getElementById('myImg').src=image;
+    let a = document.createElement('a');
+    a.setAttribute('download','DrawIt.png');
+    a.setAttribute('href',canvas.toDataURL('image/png').replace('image/png','image/octet-stream'));
+    a.style.display='none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    // document.getElementById('myImg').src=image;
 });
 canvas.addEventListener('mousedown',(e)=>{
     pen.down=true;
