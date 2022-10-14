@@ -14,7 +14,8 @@ let pen ={
     down:false
 };
 save.addEventListener('click',()=>{
-    console.log("Saved");
+    let image = canvas.toDataURL();
+    document.getElementById('myImg').src=image;
 });
 canvas.addEventListener('mousedown',(e)=>{
     pen.down=true;
