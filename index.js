@@ -22,7 +22,7 @@ save.addEventListener('click',()=>{
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    // document.getElementById('myImg').src=image;
+    document.getElementById('myImg').src=image;
 });
 canvas.addEventListener('mousedown',(e)=>{
     pen.down=true;
