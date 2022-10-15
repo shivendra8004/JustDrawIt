@@ -27,7 +27,6 @@ save.addEventListener('click',()=>{
 canvas.addEventListener('mousedown',(e)=>{
     pen.down=true;
     [pen.x,pen.y]=[e.offsetX,e.offsetY];
-    console.log(pen);
 });
 canvas.addEventListener('mousemove',(e)=>{
     if(!pen.down) return;
@@ -47,4 +46,47 @@ canvas.addEventListener('mouseout',()=>{
 });
 reset.addEventListener('click',()=>{
     context.clearRect(0, 0, canvas.width, canvas.height);
+});
+const state = {
+    mousedown: false
+  };
+
+  function getMosuePositionOnCanvas(event) {
+    const clientX = event.clientX || event.touches[0].clientX;
+    const clientY = event.clientY || event.touches[0].clientY;
+    const { offsetLeft, offsetTop } = event.target;
+    const canvasX = clientX - offsetLeft;
+    const canvasY = clientY - offsetTop;
+  
+    return { x: canvasX, y: canvasY };
+  }
+canvas.addEventListener('touchstart',(e)=>{
+    e.preventDefault();
+    const mousePos = getMosuePositionOnCanvas(e);
+    context.beginPath();
+    context.moveTo(mousePos.x, mousePos.y);
+    context.lineWidth = 5;
+    context.strokeStyle = '#000000';
+    context.shadowColor = null;
+    context.shadowBlur = null;
+    context.fill();
+    state.mousedown = true;
+    console.log("Start");
+});
+canvas.addEventListener('touchmove',(e)=>{
+    e.preventDefault();
+  if (state.mousedown) {
+    const mousePos = getMosuePositionOnCanvas(e);
+    context.lineTo(mousePos.x, mousePos.y);
+    context.stroke();
+  }
+    console.log("moving");
+});
+canvas.addEventListener('touchend',(e)=>{
+    e.preventDefault();
+  if (state.mousedown) {
+    context.stroke();
+  }
+  state.mousedown = false;
+    console.log("End");
 });
