@@ -65,8 +65,8 @@ canvas.addEventListener('touchstart',(e)=>{
     const mousePos = getMosuePositionOnCanvas(e);
     context.beginPath();
     context.moveTo(mousePos.x, mousePos.y);
-    context.lineWidth = 5;
-    context.strokeStyle = '#000000';
+    context.lineWidth = penSize.value;
+    context.strokeStyle = penColor.value;
     context.shadowColor = null;
     context.shadowBlur = null;
     context.fill();
