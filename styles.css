@@ -26,6 +26,8 @@ body {
     background: white;
     border: 3px solid black;
     margin-left: 4%;
+    width: 1020px;
+    height: 600px;
 }
 
 .dashBoard {
@@ -73,4 +75,11 @@ input {
     font-weight: bold;
     font-family: "Quicksand";
     margin-top: 10px;
+}
+
+@media(max-width: 420px) {
+    #cavas {
+        height: 200px;
+        width: 100px;
+    }
 }
